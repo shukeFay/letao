@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索中心页面</title>
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入fontAwesome的css文件 用于提供页面所需字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/search.css">
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a class="fa fa-arrow-left" href="#"></a>
+        </div>
+        <div class="content">
+            <h4>搜索中心</h4>
+        </div>
+        <div class="right">
+            <!-- 字体图标
+                <a class="fa fa-search" href="search.html"></a> -->
+        </div>
+
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <div class="search-form">
+                    <form action="#">
+                        <input type="search" class="input-search" placeholder="请输入您需要的商品">
+                        <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+                    </form>
+                </div>
+
+                <!-- 搜索历史 -->
+                <div class="search-history">
+                    <!-- 使用MUI的卡片组件 -->
+                    <div class="mui-card">
+
+                        <!--页眉，放置标题-->
+                        <div class="mui-card-header">
+                            <span>搜索历史</span>
+                            <a class="fa fa-trash" href="#">清空记录</a>
+                        </div>
+
+                        <!-- 内容区 -->
+                        <div class="mui-card-content">
+                            <!-- MUi数字角标的列表 -->
+                            <ul class="mui-table-view">
+                                <!-- <li class="mui-table-view-cell">Item 1
+                                    <span class="mui-badge fa fa-close"></span>
+                                </li>
+                                <li class="mui-table-view-cell">Item 2
+                                    <span class="mui-badge fa fa-close"></span>
+                                </li>
+                                <li class="mui-table-view-cell">Item 3
+                                    <span class="mui-badge fa fa-close"></span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-home"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+
+    <!-- 创建一个搜索历史的模板 -->
+    <script type="text/html" id="searchHistoryTpl">
+        {{ each list value i}}
+        <li class="mui-table-view-cell">{{ value.key }}
+                <span class="mui-badge fa fa-close" data-index="{{i}}"></span>
+            </li>
+        {{ /each }}
+        </script>
+
+
+    <!-- 1. 引入MUI的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2. 引入zepto 获取元素 发送请求 和jq一样的功能适用移动端-->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3. 有请求使用到模板 引入模板引擎 template-web.js-->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+
+</html>

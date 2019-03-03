@@ -92,28 +92,38 @@ img {
   color: orange;
 }
 #main {
-  display: flex;
-  background-color: #ccc;
-}
-#main .category-left {
-  width: 0.8rem;
-}
-#main .category-left ul li.active {
-  background-color: #ccc;
-}
-#main .category-left ul .mui-table-view-cell:after {
-  left: 0;
-}
-#main .category-right {
-  flex: 1;
-  padding: 0.1rem;
-}
-#main .category-right a {
-  display: block;
-  text-align: center;
   background-color: #fff;
 }
-#main .category-right a img {
-  width: 100%;
-  height: 0.5rem;
+#main .search-form {
+  padding: 0.1rem;
+}
+#main .search-form form {
+  display: flex;
+}
+#main .search-form form input {
+  flex: 1;
+  height: .36rem;
+  border: 1px solid #006699;
+  background-color: #fff;
+  text-align: left;
+  font-size: .14rem;
+  border-radius: .06rem 0 0 .06rem;
+  margin-bottom: 0;
+}
+#main .search-form form button {
+  width: 0.6rem;
+  height: 0.36rem;
+  background-color: #006699;
+  border-radius: 0 .06rem .06rem 0;
+  border-color: #006699;
+}
+#main .search-history .mui-card-header span {
+  font-size: .14rem;
+}
+#main .search-history .mui-card-header a {
+  font-size: .14rem;
+  color: #666;
+}
+#main .search-history .mui-card-header .mui-table-view-cell:after {
+  left: 0;
 }

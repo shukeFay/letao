@@ -1,11 +1,12 @@
-
 // 项目里面的页面很多重复样式 需要封装在公共文件里面
 // 1. 定义一些公共变量
 @main-color: #006699;
+
 //样式初始化话
 html {
     font-size: 26.6667vw;
 }
+
 body {
     font-size: .14rem;
 }
@@ -20,6 +21,7 @@ h6 {
     margin: 0;
     padding: 0;
 }
+
 img {
     vertical-align: middle;
 }
@@ -34,19 +36,51 @@ img {
     left: 0;
     // 固定定位默认没有100%的宽度,所以要给它加宽度100%
     width: 100%;
+    a {
+        display: block;
+        text-align: center;
+        line-height: .45rem;
+        color: #fff;
+    }
+
     .left {
         width: 0.45rem;
         height: 0.45rem;
+
+      
+        // i {
+        //     display: block;
+        //     text-align: center;
+        //     line-height: .45rem;
+        //     color: #fff;
+        // }
     }
-    .center {
+
+    .content {
         flex: 1;
         text-align: center;
+
         h4 {
             // MUI的h4自带了行高
             line-height: .45rem;
             font-weight: normal;
         }
+
+        // 分类页面form表单
+        form {
+            padding-top: .05rem;
+            input {
+                background-color: #fff;
+                height: 0.35rem;
+                margin-bottom: 0;
+                color: #000;
+                text-align: left;
+                font-size: .14rem;
+            }
+        }
+
     }
+
     .right {
         width: 0.45rem;
         height: 0.45rem;
@@ -54,10 +88,11 @@ img {
         line-height: .45rem;
     }
 }
+
 #main {
     padding: 0.45rem 0;
     height: 100vh;
-    position: relative;
+    // position: relative;
 
     .mui-scroll-wrapper {
         // 把默认绝对定位改成相对定位
@@ -84,9 +119,11 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         span {
             line-height: 1;
         }
+
         &.active {
             color: orange;
         }

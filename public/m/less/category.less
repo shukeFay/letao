@@ -1,24 +1,35 @@
 
 @import "base.less";
 
-#header {
+#main {
     display: flex;
-    .left {
-        width: 0.45rem;
-        height: 0.45rem;
-        text-align: center;
-        line-height: .45rem;
+    background-color: #ccc;
+    .category-left {
+        width: 0.8rem;
+        ul {
+            li {
+                &.active {
+                    background-color: #ccc;
+                }
 
-    }
-    .content {
-        flex: 1;
-        height: 0.45rem;
-        line-height: .45rem;
-        input {
-            background-color: #fff;
-            font-size: .14rem;
-            text-align: left;
+            }
+            // 默认线有一点距离 去掉设置left:0
+            .mui-table-view-cell:after {
+                left: 0;
+            }
         }
     }
-
+    .category-right {
+        flex: 1;
+        padding: 0.1rem;
+        a {
+            display: block;
+            text-align: center;
+            background-color: #fff;
+            img {
+                width: 100%;
+                height: 0.5rem;
+            }
+        }
+    }
 }

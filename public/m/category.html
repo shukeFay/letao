@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!--设置视口 -->
@@ -16,56 +17,141 @@
 
 
 </head>
+
 <body>
     <!-- 头部区域 -->
     <header id="header">
         <div class="left">
-            <i class="fa fa-arrow-left"></i>
+            <a class="fa fa-arrow-left" href="#"></a>
         </div>
         <div class="content">
-            <input type="search" placeholder="请输入要搜索的商品">
+            <form>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
         </div>
         <div class="right">
-             <!-- 字体图标 -->
-             <i class="fa fa-search"></i>
+            <!-- 字体图标 -->
+            <a class="fa fa-search" href="search.html"></a>
         </div>
 
     </header>
     <!-- 主体区域 -->
     <main id="main">
-        <div class="mui-row">
-            <div class="mui-col-xs-3 left">
-                <div><a href="#"><p>运动馆</p></a></div>
-                <div><a href="#"><p>女士馆</p></a></div>
-                <div><a href="#"><p>男士馆</p></a></div>
-                <div><a href="#"><p>帆布馆</p></a></div>
-                <div><a href="#"><p>户外馆</p></a></div>
+
+        <div class="category-left">
+
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell active">运动馆</li>
+                        <!-- <li class="mui-table-view-cell">女士馆</li>
+                                    <li class="mui-table-view-cell">男士馆</li>
+                                    <li class="mui-table-view-cell">户外馆</li>
+                                    <li class="mui-table-view-cell">帆布馆</li> -->
+                    </ul>
+                </div>
             </div>
-            <div class="mui-col-xs-9 right">
-                <div><a href="#"><img src="images" alt=""></a></div>
-                <div><a href="#"><img src="images" alt=""></a></div>
-                <div><a href="#"><img src="images" alt=""></a></div>
-                <div><a href="#"><img src="images" alt=""></a></div>
-                <div><a href="#"><img src="images" alt=""></a></div>
+
         </div>
+
+
+
+        <div class="category-right">
+
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="mui-row">
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <!-- <div class="mui-col-xs-4">
+                                        <a href="#">
+                                            <img src="images/brand2.png" alt="">
+                                            <p>阿迪</p>
+                                        </a>
+                                    </div>
+                                    <div class="mui-col-xs-4">
+                                        <a href="#">
+                                            <img src="images/brand3.png" alt="">
+                                            <p>新百伦</p>
+                                        </a>
+                                    </div>
+                                    <div class="mui-col-xs-4">
+                                        <a href="#">
+                                            <img src="images/brand4.png" alt="">
+                                            <p>哥伦比亚</p>
+                                        </a>
+                                    </div>
+                                    <div class="mui-col-xs-4">
+                                        <a href="#">
+                                            <img src="images/brand5.png" alt="">
+                                            <p>匡威</p>
+                                        </a>
+                                    </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <!-- 底部区域 -->
     <footer id="footer">
-            <div class="mui-row">
-                    <div class="mui-col-xs-3"><a class="active" href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
-                    <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
-                    <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-home"></i><span>购物车</span></a></div>
-                    <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
-                </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a class="active" href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-home"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
+        </div>
     </footer>
+
+    <!--  左侧分类的模板 -->
+    <script type="text/html" id="categoryLeftTpl">
+        {{ each rows value i }}
+
+        <!-- 遍历给第一个加active类 -->
+        {{if i==0}}
+        <li class="mui-table-view-cell active" data-id="{{value.id}}">{{ value.categoryName}}</li>
+        {{ else }}
+            <li class="mui-table-view-cell" data-id="{{value.id}}">{{ value.categoryName}}</li>
+        {{ /if }}
+
+        <!-- 也可以用三元表单式 -->
+        <!-- 三元运算符 判断 i == 0 返回active 否则返回空 -->
+        <!-- <li class="mui-table-view-cell {{i == 0 ? 'active' : ''}}" data-id="{{value.id}}">{{value.categoryName}}</li>
+
+        {{ /each }} -->
+
+    </script>
+    <!-- 右侧的模版 -->
+    <script type="text/html" id="ategoryRightTpl">
+        {{ each rows value i }}
+
+        <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{value.brandLogo}}" alt="">
+                    <p>{{ value.brandName }}</p>
+                </a>
+            </div>
+
+        {{ /each }}
+    </script>
 
     <!-- 引入mui的js文件 -->
     <script src="./lib/mui/js/mui.js"></script>
     <!-- 引入zepto的js文件 获取元素 发送请求 -->
     <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎 template-web.js-->
+    <script src="./lib/artTemplate/template-web.js"></script>
     <!-- 引入自己的category.js -->
     <script src="./js/category.js"></script>
-    
+
 </body>
+
 </html>

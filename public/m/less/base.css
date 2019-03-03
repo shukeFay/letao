@@ -26,17 +26,34 @@ img {
   left: 0;
   width: 100%;
 }
+#header a {
+  display: block;
+  text-align: center;
+  line-height: .45rem;
+  color: #fff;
+}
 #header .left {
   width: 0.45rem;
   height: 0.45rem;
 }
-#header .center {
+#header .content {
   flex: 1;
   text-align: center;
 }
-#header .center h4 {
+#header .content h4 {
   line-height: .45rem;
   font-weight: normal;
+}
+#header .content form {
+  padding-top: .05rem;
+}
+#header .content form input {
+  background-color: #fff;
+  height: 0.35rem;
+  margin-bottom: 0;
+  color: #000;
+  text-align: left;
+  font-size: .14rem;
 }
 #header .right {
   width: 0.45rem;
@@ -47,7 +64,6 @@ img {
 #main {
   padding: 0.45rem 0;
   height: 100vh;
-  position: relative;
 }
 #main .mui-scroll-wrapper {
   position: relative;

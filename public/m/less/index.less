@@ -1,0 +1,84 @@
+
+// 引入base文件
+@import "base.less";
+
+/* 主体区域css样式 */
+#main {
+    a {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+
+    // 因为很多地方都市相同的,所以可以把a标签和img的样式给到main,这样可以节省代码,避免冗余
+
+    // /*轮播图区域*/
+    // .slide {
+
+    //     a {
+    //         display: block;
+    //         img {
+    //             width: 100%;
+    //         }
+    //     }
+    // }
+    
+  
+    /*导航条区域*/
+    .nav {
+        padding: 0.1rem;
+
+        // a {
+        //     display: block;
+        //     img {
+        //         width: 100%;
+        //     }
+        // }
+    }
+
+    /* 广告区域*/
+    .banner {
+        padding: 0.1rem;
+        .left {
+            a {
+                 //使用flex布局 让每个图片宽度50% flex布局子元素自动转块不会有间隙
+                display: flex;
+                img {
+                    width: 50%;
+                    height: 1.2rem;
+                }
+            }
+
+        }
+        .right {
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    height: 2.4rem;
+                }
+            }
+        }
+    }
+    .brand, .sport, .woman, .man {
+        padding: 0.1rem;
+        .title {
+            // a {
+            //     display: block;
+            //     img {
+            //         width: 100%;
+            //     }
+            // }
+        }
+        .content {
+            // a {
+            //     display: block;
+            //     img {
+            //         width: 100%;
+            //     }
+            // }
+        }
+    }
+}
+

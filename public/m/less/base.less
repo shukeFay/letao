@@ -1,0 +1,94 @@
+
+// 项目里面的页面很多重复样式 需要封装在公共文件里面
+// 1. 定义一些公共变量
+@main-color: #006699;
+//样式初始化话
+html {
+    font-size: 26.6667vw;
+}
+body {
+    font-size: .14rem;
+}
+
+// 去掉标题默认间距
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+img {
+    vertical-align: middle;
+}
+
+/* 头部区域样式,因为其他页面用的上,所以写在base文件*/
+#header {
+    display: flex;
+    background-color: @main-color;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // 固定定位默认没有100%的宽度,所以要给它加宽度100%
+    width: 100%;
+    .left {
+        width: 0.45rem;
+        height: 0.45rem;
+    }
+    .center {
+        flex: 1;
+        text-align: center;
+        h4 {
+            // MUI的h4自带了行高
+            line-height: .45rem;
+            font-weight: normal;
+        }
+    }
+    .right {
+        width: 0.45rem;
+        height: 0.45rem;
+        text-align: center;
+        line-height: .45rem;
+    }
+}
+#main {
+    padding: 0.45rem 0;
+    height: 100vh;
+    position: relative;
+
+    .mui-scroll-wrapper {
+        // 把默认绝对定位改成相对定位
+        position: relative;
+        // 把这个区域滚动的盒子高度设置为100% 和main的内容一样
+        height: 100%;
+    }
+}
+
+
+/*底部区域样式*/
+#footer {
+    background-color: @main-color;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    // 固定定位默认没有100%的宽度,所以要给它加宽度100%
+    width: 100%;
+
+    a {
+        display: flex;
+        height: 0.45rem;
+        color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            line-height: 1;
+        }
+        &.active {
+            color: orange;
+        }
+    }
+}

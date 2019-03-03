@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- 设置视口 -->
@@ -11,12 +12,224 @@
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <!-- 引入fontAwesome的css文件 用于提供页面所需字体图标 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入swiper轮播图插件.css -->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css">
     <!-- 引入自己的css文件 -->
     <link rel="stylesheet" href="./less/index.css">
-    
+
 </head>
+
 <body>
-    
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left"></div>
+
+        <div class="center">
+            <h4>乐淘自写主页</h4>
+        </div>
+
+        <div class="right">
+            <!-- 字体图标 -->
+            <i class="fa fa-search"></i>
+        </div>
+
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+
+                <!-- 轮播图区 -->
+                <section class="slide">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner1.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner2.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner3.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner4.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner5.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="./images/banner6.png" alt=""></a></div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                </section>
+
+                <!-- 导航区 -->
+                <nav class="nav">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav1.png" alt=""></a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav2.png" alt=""></a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav3.png" alt=""></a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav4.png" alt=""></a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav5.png" alt=""></a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="images/nav6.png" alt=""></a></div>
+                    </div>
+                </nav>
+
+                <!-- 广告区域 -->
+                <section class="banner">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-8 left">
+                            <a href="#">
+                                <img src="./images/active1.png" alt=""><img src="./images/active2.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="./images/active4.png" alt=""><img src="./images/active5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4 right">
+                            <a href="#"><img src="./images/active3.png" alt=""></a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 品牌专区 -->
+                <section class="brand">
+                    <div class="title">
+                        <a href="#"><img src="./images/title0.png" alt=""></a>
+                    </div>
+                    <div class="content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand1.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand2.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand3.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand4.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand5.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand6.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand7.png" alt=""></a></div>
+                            <div class="mui-col-xs-3"><a href="#"><img src="images/brand8.png" alt=""></a></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 运动专区 -->
+                <section class="sport">
+                    <div class="title">
+                        <a href="#">
+                            <img src="./images/title1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/0073a2aafb8d430c81cfb1e18ae0144b.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/a9c7f59e3d3b4c368698a9e3f8b53381.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/0073a2aafb8d430c81cfb1e18ae0144b.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/a9c7f59e3d3b4c368698a9e3f8b53381.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 女士专区 -->
+                <section class="woman">
+                    <div class="title">
+                        <a href="#">
+                            <img src="./images/title2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/a9c7f59e3d3b4c368698a9e3f8b53381.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/a9c7f59e3d3b4c368698a9e3f8b53381.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/8a69ab3c40f04f41ac8b49c0c85685fa.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/8a69ab3c40f04f41ac8b49c0c85685fa.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 男士专区 -->
+                <section class="man">
+                    <div class="title">
+                        <a href="#">
+                            <img src="./images/title3.png" alt="">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2018/ec2a17374cc74edeb3f3fea429ceb2e7.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/b8ca604e5eea40558b209a8a2f185fe9.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2017/b8ca604e5eea40558b209a8a2f185fe9.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <a href="#">
+                                    <img src="http://134.175.175.137:80/picture//website/ff80808157ffc1c2015800534d4c0000/2018/ec2a17374cc74edeb3f3fea429ceb2e7.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a class="active" href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-home"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+
 
 
 
@@ -29,7 +242,9 @@
     <script src="./lib/zepto/zepto.min.js"></script>
     <!-- 引入模版引擎文件 -->
     <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/swiper/js/swiper.js"></script>
     <!-- 自己写的js -->
     <script src="./js/index.js"></script>
 </body>
+
 </html>

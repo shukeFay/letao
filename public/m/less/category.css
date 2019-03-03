@@ -1,0 +1,96 @@
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+/* 头部区域样式,因为其他页面用的上,所以写在base文件*/
+#header {
+  display: flex;
+  background-color: #006699;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#header .left {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+#header .center {
+  flex: 1;
+  text-align: center;
+}
+#header .center h4 {
+  line-height: .45rem;
+  font-weight: normal;
+}
+#header .right {
+  width: 0.45rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#main {
+  padding: 0.45rem 0;
+  height: 100vh;
+  position: relative;
+}
+#main .mui-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
+/*底部区域样式*/
+#footer {
+  background-color: #006699;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#footer a {
+  display: flex;
+  height: 0.45rem;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer a span {
+  line-height: 1;
+}
+#footer a.active {
+  color: orange;
+}
+#header {
+  display: flex;
+}
+#header .left {
+  width: 0.45rem;
+  height: 0.45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+#header .content {
+  flex: 1;
+  height: 0.45rem;
+  line-height: .45rem;
+}
+#header .content input {
+  background-color: #fff;
+  font-size: .14rem;
+  text-align: left;
+}

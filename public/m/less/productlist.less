@@ -1,0 +1,48 @@
+@import "base.less";
+
+
+/*商品列表主体样式*/
+#main {
+    .product-list {
+        .mui-card-header {
+            display: flex;
+            a {
+                display: flex;
+                font-size: .14rem;
+                color: #666;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                &.active {
+                    color: red;
+                }
+                
+            }
+        }
+        //卡片内容
+        .mui-card-content {
+            .mui-col-xs-6 {
+                // 所有盒子下面有阴影
+                box-shadow: 0 .01rem 0 #ccc;
+                &:nth-child(odd){
+                    // 右边的盒子左边和下面都要阴影
+                    box-shadow: .01rem .01rem 0 #ccc;
+                }
+            }
+            .product {
+                text-align: center;
+                padding: .1rem .05rem;
+                .product-img {
+                    width: 100%;
+                }
+                .product-name {
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp:2;
+                }
+            }
+        }
+    }
+}

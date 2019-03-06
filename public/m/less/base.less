@@ -36,6 +36,7 @@ img {
     left: 0;
     // 固定定位默认没有100%的宽度,所以要给它加宽度100%
     width: 100%;
+    // justify-content: space-between;
     a {
         display: block;
         text-align: center;
@@ -57,13 +58,16 @@ img {
     }
 
     .content {
-        flex: 1;
+         flex: 1;
         text-align: center;
-
+        width: 100%;
+        
         h4 {
             // MUI的h4自带了行高
             line-height: .45rem;
             font-weight: normal;
+
+
         }
 
         // 分类页面form表单
@@ -128,4 +132,30 @@ img {
             color: orange;
         }
     }
+}
+
+/*搜索页面公共样式*/
+.search-form {
+    padding: 0.1rem;
+    form {
+        display: flex;
+        input {
+            flex: 1;
+            height: .36rem;
+            border: 1px solid @main-color;
+            background-color: #fff;
+            text-align: left;
+            font-size: .14rem;
+            border-radius: .06rem 0 0 .06rem;
+            margin-bottom: 0;
+        }
+        button {
+            width: 0.6rem;
+            height: 0.36rem;
+            background-color: @main-color;
+            border-radius: 0 .06rem .06rem 0;
+            border-color: @main-color;
+        }
+    }
+
 }

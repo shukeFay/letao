@@ -39,6 +39,7 @@ img {
 #header .content {
   flex: 1;
   text-align: center;
+  width: 100%;
 }
 #header .content h4 {
   line-height: .45rem;
@@ -91,16 +92,14 @@ img {
 #footer a.active {
   color: orange;
 }
-#main {
-  background-color: #fff;
-}
-#main .search-form {
+/*搜索页面公共样式*/
+.search-form {
   padding: 0.1rem;
 }
-#main .search-form form {
+.search-form form {
   display: flex;
 }
-#main .search-form form input {
+.search-form form input {
   flex: 1;
   height: .36rem;
   border: 1px solid #006699;
@@ -110,12 +109,15 @@ img {
   border-radius: .06rem 0 0 .06rem;
   margin-bottom: 0;
 }
-#main .search-form form button {
+.search-form form button {
   width: 0.6rem;
   height: 0.36rem;
   background-color: #006699;
   border-radius: 0 .06rem .06rem 0;
   border-color: #006699;
+}
+#main {
+  background-color: #fff;
 }
 #main .search-history .mui-card-header span {
   font-size: .14rem;

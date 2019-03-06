@@ -92,40 +92,62 @@ img {
 #footer a.active {
   color: orange;
 }
-/* 主体区域css样式 */
-#main {
-  /*导航条区域*/
-  /* 广告区域*/
-}
-#main a {
-  display: block;
-}
-#main a img {
-  width: 100%;
-}
-#main .nav {
+/*搜索页面公共样式*/
+.search-form {
   padding: 0.1rem;
 }
-#main .banner {
-  padding: 0.1rem;
-}
-#main .banner .left a {
+.search-form form {
   display: flex;
 }
-#main .banner .left a img {
-  width: 50%;
-  height: 1.2rem;
+.search-form form input {
+  flex: 1;
+  height: .36rem;
+  border: 1px solid #006699;
+  background-color: #fff;
+  text-align: left;
+  font-size: .14rem;
+  border-radius: .06rem 0 0 .06rem;
+  margin-bottom: 0;
 }
-#main .banner .right a {
-  display: block;
+.search-form form button {
+  width: 0.6rem;
+  height: 0.36rem;
+  background-color: #006699;
+  border-radius: 0 .06rem .06rem 0;
+  border-color: #006699;
 }
-#main .banner .right a img {
+/*商品列表主体样式*/
+#main .product-list .mui-card-header {
+  display: flex;
+}
+#main .product-list .mui-card-header a {
+  display: flex;
+  font-size: .14rem;
+  color: #666;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#main .product-list .mui-card-header a.active {
+  color: red;
+}
+#main .product-list .mui-card-content .mui-col-xs-6 {
+  box-shadow: 0 .01rem 0 #ccc;
+}
+#main .product-list .mui-card-content .mui-col-xs-6:nth-child(odd) {
+  box-shadow: .01rem .01rem 0 #ccc;
+}
+#main .product-list .mui-card-content .product {
+  text-align: center;
+  padding: .1rem .05rem;
+}
+#main .product-list .mui-card-content .product .product-img {
   width: 100%;
-  height: 2.4rem;
 }
-#main .brand,
-#main .sport,
-#main .woman,
-#main .man {
-  padding: 0.1rem;
+#main .product-list .mui-card-content .product .product-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

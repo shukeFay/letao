@@ -4,6 +4,7 @@ $(function(){
     queryHistory();
     deleteHistory();
     clearHistory();
+    initScroll();
 
 
     /* 1. 添加记录函数 */
@@ -66,6 +67,7 @@ $(function(){
             queryHistory();
             // 10. 添加完成后清空输入框
              $('.input-search').val('');
+             location = "productlist.html?search="+search+"&time="+ new Date().getTime();
         });
     }
     /* 2. 查询记录函数 */
@@ -95,17 +97,52 @@ $(function(){
 
     /* 3. 删除记录函数 */
     function deleteHistory(){
+         /* 删除思路
+            1. 给所有删除按钮添加点击事件（页面历史记录列表是动态渲染查询了之后才有列表）要使用委托添加事件 
+            2. 点击删除按钮的要获取当前要删除的元素的索引
+            3. 再获取搜索记录的数组 把这个索引对应的值删掉
+            4. 重新把删除完成后的数组 保存到本地存储中
+            5. 调用查询刷新列表*/
+        // 1. 通过给父元素ul加事件 委托到里面的删除按钮
+        $('.search-history ul').on('tap','.btn-delete',function(){
+            // console.log($(this).data('index'));
+            
+            // 2.获取删除元素的索引
+             var index = $(this).data('index');
 
+            // 3. 获取当前本地存储的数组 默认获取的是字符串 转成真正的数组
+            var searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+            // 4. 在当前数组中删除掉这个索引的元素
+            searchHistory.splice(index,1);
+            // 5. 删除完成后重新保存到本地存储 保存的只能是字符串 转成字符串再保存
+            localStorage.setItem('searchHistory',JSON.stringify(searchHistory));
+            // 6. 调用查询刷新页面
+            queryHistory();
+        });
     }
 
      /* 4. 清空记录函数 */
      function clearHistory(){
-
+          /* 思路
+            1. 点击清空按钮清空
+            2. 把整个本地存储键删掉 或者 调用clear清空所有(但这样会把其他键也会删除)
+            3. 删除完成后重新查询即可 */
+        // 1. 点击清空按钮
+        $('.btn-clear').on('tap',function(){
+            // console.log(this);
+            // 2. 删掉本地存储的searchHistory键和值
+            localStorage.removeItem('searchHistory');
+            // 3. 调用查询刷新页面
+            queryHistory();    
+        });
      }
 
+     function initScroll(){
      /*滚动插件初始化 */
      mui('.mui-scroll-wrapper').scroll({
         indicators: false,
-        deceleration: 0.0005 
+        deceleration: 0.0005,
+        bounce: true //是否启用回弹
     });
+  }
 })

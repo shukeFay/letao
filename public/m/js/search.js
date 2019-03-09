@@ -5,6 +5,7 @@ $(function(){
     deleteHistory();
     clearHistory();
     initScroll();
+    gotoProductlist();
 
 
     /* 1. 添加记录函数 */
@@ -95,6 +96,9 @@ $(function(){
     }
 
 
+     // 定义一个变量确认是否点击isDelete
+     var isDelete = false;
+
     /* 3. 删除记录函数 */
     function deleteHistory(){
          /* 删除思路
@@ -118,6 +122,9 @@ $(function(){
             localStorage.setItem('searchHistory',JSON.stringify(searchHistory));
             // 6. 调用查询刷新页面
             queryHistory();
+            // 点击了之后把isDelete换成 true
+            isDelete = true;
+
         });
     }
 
@@ -145,4 +152,24 @@ $(function(){
         bounce: true //是否启用回弹
     });
   }
+
+  /* 6. 点击历史记录的某个记录跳转到商品列表搜索功能函数 */
+  function gotoProductlist(){
+      /* 1. 点击列表中的某个元素要跳转到商品列表实现搜索功能
+        2. 获取当前点击列表的要跳转传过去搜索的值
+        3. 使用location跳转页面 并且把当前这个值传过去 */
+        // 1. 给所有列表绑定点击事件
+        $('.search-history .mui-table-view').on('tap','li',function(){
+            // 判断如果isDelete依然还是false 表示没点过删除 就可以跳转
+            if(isDelete==false){
+                // 2. 获取当前列表data-search的值
+                var search = $(this).data('search');
+                // 3. 跳转到商品列表 把当前search传过去
+                location = "productlist.html?search=" + search + '&time='+ new Date().getTime();
+            }
+            isDelete = false;
+        });
+  }
+
+
 })

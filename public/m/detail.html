@@ -22,7 +22,9 @@
 <body>
     <!-- 头部区域 -->
     <header id="header">
-        <div class="left"></div>
+        <div class="left">
+            <a class="fa fa-arrow-left" href="#"></a>
+        </div>
 
         <div class="content">
             <h4>商品详情</h4>
@@ -30,26 +32,132 @@
 
         <div class="right">
             <!-- 字体图标 -->
-            <a class="fa fa-search" href="search.html"></a>
+            <a href="index.html" class="fa fa-home"></a>
         </div>
 
     </header>
 
     <!-- 主体区域 -->
     <main id="main">
-       
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <section id="detail">
+                    <!-- 轮播图区域 -->
+                    <section id="slider">
+                        <div class="mui-slider">
+                            <div class="mui-slider-group mui-slider-loop">
+                                <!--支持循环，需要重复图片节点-->
+                                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner4.png" /></a></div>
+                                <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                                <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png" /></a></div>
+                                <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png" /></a></div>
+                                <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png" /></a></div>
+                                <!-- 支持循环，需要重复图片节点 -->
+                                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png" /></a></div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 详情列表 -->
+                    <section id="detail-list">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell product-name">名称：<strong>
+                                    李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                </strong></li>
+                            <li class="mui-table-view-cell product-price">价格：<span>￥1111.11</span> <del>￥2222.22</del></li>
+                            <li class="mui-table-view-cell product-size">尺码：
+                                <span>
+                                    <button type="button" class="mui-btn mui-btn-warning">35</button>
+                                    <!-- <button type="button">36</button>
+                                    <button type="button">37</button>
+                                    <button type="button">38</button>
+                                    <button type="button">39</button>
+                                    <button type="button">40</button>
+                                    <button type="button">41</button>
+                                    <button type="button">42</button>
+                                    <button type="button">43</button>
+                                    <button type="button">44</button>
+                                    <button type="button">45</button>
+                                    <button type="button">46</button> -->
+                                </span>
+                            </li>
+                            <li class="mui-table-view-cell product-num">
+                                    <!-- 数量：<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100'>
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" />
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div> 剩余 <span>20</span> 件 -->
+                                </li>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
     </main>
-
-
 
     <!-- 底部区域 -->
     <footer id="footer">
         <div class="mui-row">
-
+            <div class="mui-col-xs-2">
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-danger btn-add-cart">加入购物车</button>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-warning">立即购买</button>
+            </div>
         </div>
     </footer>
 
 
+    <!-- 详情页面模版 -->
+    <script type="text/html" id="detailTpl">
+        <!-- 轮播图区域 -->
+        <section id="slider">
+            <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[pic.length-1].picAddr}}" /></a></div>
+                    {{ each pic value i }}
+                     <!-- value 数组里面每个图片对象 {id: 1, picName: "product.jpg", productId: 1, picAddr: "/mobile/images/product.jpg"} -->
+                     <div class="mui-slider-item"><a href="#"><img src="{{value.picAddr}}" /></a></div>  
+                     {{ /each }}
+                    <!-- 支持循环，需要重复图片节点 -->
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[0].picAddr}}" /></a></div>
+                </div>
+            </div>
+        </section>
+        <!-- 详情列表 -->
+        <section id="detail-list">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell product-name">名称:<strong>
+                        {{ proName}}
+                </strong></li>
+                <li class="mui-table-view-cell product-price">价格:<span>￥ {{ price }}</span> <del>￥{{ oldPrice }}</del></li>
+                <li class="mui-table-view-cell product-size">尺码：
+                    <span>
+                        {{ each size value i}}
+                        <button type="button"class="mui-btn {{i == 0 ? 'mui-btn-warning':''}}" data-size="{{value}}">{{ value }}</button>
+                        
+                        {{ /each }}
+                    </span>
+                </li>
+                <li class="mui-table-view-cell product-num">
+                    数量：<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='{{num}}'>
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+
+                            <input class="mui-numbox-input" type="number" />
+
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                          </div>剩余 <span>{{num}}</span> 件
+                </li>
+            </ul>
+        </section>
+
+</script>
 
 
 
@@ -62,6 +170,7 @@
     <!-- 引入模版引擎文件 -->
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./lib/swiper/js/swiper.js"></script>
+    <script src="./js/common.js"></script>
     <!-- 自己写的js -->
     <script src="./js/detail.js"></script>
 </body>

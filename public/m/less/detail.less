@@ -1,1 +1,50 @@
 @import "base.less";
+
+#main {
+    #slider{
+    .mui-slider-item{
+        img {
+             width: 100%;
+        }
+    }
+}
+    #detail-list {
+        .product-price {
+            span {
+                color: red;
+                font-weight: 600;
+            }
+            del {
+                color: #ccc;
+            }
+        }
+    
+        .product-size {
+            // 设置左边文字和右边的按钮居中对齐
+            line-height: .33rem;
+            span {
+                .mui-btn {
+                    margin-bottom: 0.05rem;
+                }
+            }
+
+        }
+    }
+}
+#footer {
+    background-color: #ccc;
+    .mui-row{
+        >.mui-col-xs-5 {
+            padding: 0.06rem 0.05rem;
+            button {
+                width: 100%;
+            }
+        }
+        .fa-shopping-cart{
+            font-size: .2rem;
+            color: #666;
+        }
+    }
+   
+    
+}

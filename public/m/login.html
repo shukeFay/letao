@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘登录页面</title>
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入fontAwesome的css文件 用于提供页面所需字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/login.css">
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a class="fa fa-arrow-left" href="#"></a>
+        </div>
+        <div class="content">
+            <h4>登录中心</h4>
+        </div>
+        <div class="right">
+            <!-- 字体图标 -->
+            <a class="fa fa-home" href="index.html"></a>
+        </div>
+
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" class="mui-input-clear username" placeholder="请输入用户名" value="itcast">
+            </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password password" placeholder="请输入密码" value="111111">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
+                <button type="button" class="mui-btn mui-btn-danger btn-register">注册</button>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-home "></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+
+
+    <!-- 1. 引入MUI的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2. 引入zepto 获取元素 发送请求 和jq一样的功能适用移动端-->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3. 有请求使用到模板 引入模板引擎 template-web.js-->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

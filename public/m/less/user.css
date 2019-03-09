@@ -116,32 +116,6 @@ img {
   border-radius: 0 .06rem .06rem 0;
   border-color: #006699;
 }
-#main #slider .mui-slider-item img {
+#main .btn-exit {
   width: 100%;
-}
-#main #detail-list .product-price span {
-  color: red;
-  font-weight: 600;
-}
-#main #detail-list .product-price del {
-  color: #ccc;
-}
-#main #detail-list .product-size {
-  line-height: .33rem;
-}
-#main #detail-list .product-size span .mui-btn {
-  margin-bottom: 0.05rem;
-}
-#footer {
-  background-color: #ccc;
-}
-#footer .mui-row > .mui-col-xs-5 {
-  padding: 0.06rem 0.05rem;
-}
-#footer .mui-row > .mui-col-xs-5 button {
-  width: 100%;
-}
-#footer .mui-row .fa-shopping-cart {
-  font-size: .2rem;
-  color: #666;
 }

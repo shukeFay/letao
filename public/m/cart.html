@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车页面</title>
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入fontAwesome的css文件 用于提供页面所需字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/cart.css">
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a class="fa fa-arrow-left" href="#"></a>
+        </div>
+        <div class="content">
+            <h4>购物车</h4>
+        </div>
+        <div class="right">
+            <!-- 字体图标 -->
+            <a class="fa fa-refresh" href="#"></a>
+        </div>
+
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <ul class="mui-table-view cart-list">
+                    <li class="mui-table-view-cell">
+                        <!-- 把整个a当成左边默认显示的区域 -->
+                        <!-- mui-navigate-right 显示右侧箭头的类名 -->
+                        <!-- mui-slider-handle 是让左边能够支持滑动的类名 -->
+                        <a class="mui-navigate-right mui-slider-handle">
+                            <div class="left">
+                                <img src="./images/product.jpg" alt="">
+                                <!-- 复选框要包裹在一个类名为mui-checkbox的父元素里面 -->
+                                <div class="mui-checkbox">
+                                    <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p class="product-name">
+                                    名称: <strong>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</strong>
+                                </p>
+                                <p class="product-price">
+                                    价格: <span>￥3333.33</span> <del>￥6666.66</del>
+                                </p>
+                                <!-- 商品的参数 -->
+                                <div class="product-params">
+                                    <div class="size">
+                                        鞋码: <span>36</span>
+                                    </div>
+                                    <div class="num">
+                                        数量: x<span>1</span>双
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- right默认隐藏的按钮 mui-slider-right 默认隐藏 滑动的时候会显示出来的类名 -->
+                        <div class="mui-slider-right mui-disabled">
+                            <a href="#" class="mui-btn mui-btn-blue">编辑</a>
+                            <a href="#" class="mui-btn mui-btn-red">删除</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- 订单区域 -->
+    <div id="order" class="order">
+        <!-- 订单总额 -->
+        <div class="order-count">
+            订单总额: ￥<span>0.00</span>
+        </div>
+        <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
+    </div>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-home"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a class="active" href="cart.html"><i class="fa fa-home"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-home"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+
+    <!-- 准备购物车列表模版 -->
+    <script type="text/html" id="cartListTpl">
+        {{ if data.length > 0 }}
+        {{ each data value i }}
+        <li class="mui-table-view-cell">
+            <!-- 把整个a当成左边默认显示的区域 -->
+            <!-- mui-navigate-right 显示右侧箭头的类名 -->
+            <!-- mui-slider-handle 是让左边能够支持滑动的类名 -->
+            <a class="mui-navigate-right mui-slider-handle">
+                <div class="left">
+                    <img src="{{ value.pic[0].picAddr}}" alt="">
+                    <!-- 复选框要包裹在一个类名为mui-checkbox的父元素里面 -->
+                    <div class="mui-checkbox">
+                        <input name="checkbox" value="Item 2" type="checkbox" checked="" data-price="{{value.price}}" data-num="{{value.num}}">
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="product-name">
+                        名称: <strong>{{ value.proName }}</strong>
+                    </p>
+                    <p class="product-price">
+                        价格: <span>{{ value.price }}</span> <del>{{ value.oldPrice }}</del>
+                    </p>
+                    <!-- 商品的参数 -->
+                    <div class="product-params">
+                        <div class="size">
+                            鞋码: <span>{{ value.size }}</span>
+                        </div>
+                        <div class="num">
+                            数量: x<span>{{ value.num }}</span>双
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- right默认隐藏的按钮 mui-slider-right 默认隐藏 滑动的时候会显示出来的类名 -->
+            <div class="mui-slider-right mui-disabled">
+                <a href="#" class="mui-btn mui-btn-blue btn-edit" data-product="{{value}}">编辑</a>
+                <a href="#" class="mui-btn mui-btn-red btn-delete" data-id="{{value.id}}">删除</a>
+            </div>
+        </li>
+        {{ /each }}
+        {{ else }}
+        <li class="mui-table-view-cell">您的购物车空空如也~</li>
+        {{/if}}
+    </script>
+
+    <!-- 弹框的模板 -->
+    <script type="text/html" id="editCartTpl">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell product-size">尺码：
+                <span>
+                    <!-- 当所有商品尺码是productSize 是一个数组 遍历productSize-->
+                    {{ each productSize value i}}
+                    <button type="button"class="mui-btn {{value == size ? 'mui-btn-warning':''}}" data-size="{{value}}">{{ value }}</button>
+                    {{ /each }}
+                </span>
+            </li>
+            <li class="mui-table-view-cell product-num">
+                <!-- 最大值是productNum 商品所有数量 num的之前用户选择的数量 -->
+                数量：<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='{{productNum}}'>
+                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                        <input class="mui-numbox-input" type="number" value="{{num}}"/>
+                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                      </div>剩余 <span>{{productNum}}</span> 件
+            </li>
+        </ul>
+    </script>
+
+
+    <!-- 1. 引入MUI的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2. 引入zepto 获取元素 发送请求 和jq一样的功能适用移动端-->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3. 有请求使用到模板 引入模板引擎 template-web.js-->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>

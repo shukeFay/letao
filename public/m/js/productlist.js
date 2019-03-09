@@ -9,10 +9,8 @@ $(function () {
     searchProduct();
     // 调用商品排序功能
     sortProduct();
-    //调用下拉刷新功能函数
+    //调用上拉 下拉刷新功能函数
     pullRefresh();
-    //调用上拉加载功能函数
-    pullupRefresh();
     // 调用跳转到商品详情的函数
     gotoDetail();
 
@@ -86,11 +84,11 @@ $(function () {
                 }
             }
             // 7. 往数组里面添加值 push 往后 unshift往前加
-            // searchHistory.unshift({
-            //     key: search,
-            //     time: new Date().getTime()
-            // });
-            // console.log(searchHistory);
+            searchHistory.unshift({
+                key: search,
+                time: new Date().getTime()
+            });
+            console.log(searchHistory);
             // 8. 把数组转成json字符串存储到本地存储中
             localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
             // 10. 添加完成后清空输入框
@@ -239,16 +237,5 @@ $(function () {
             location = "detail.html?id=" + id;
 
         });
-    }
-
-
-    // 使用正则封装的一个获取url参数值的函数
-    function getQueryString(name) {
-        var reg = new RegExp("[^\?&]?" + encodeURI(name) + "=[^&]+");
-        var arr = location.search.match(reg);
-        if (arr != null) {
-            return decodeURI(arr[0].split('=')[1]);
-        }
-        return "";
     }
 })

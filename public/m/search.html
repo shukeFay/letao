@@ -21,7 +21,7 @@
     <!-- 头部区域 -->
     <header id="header">
         <div class="left">
-            <a class="fa fa-arrow-left" href="index.html"></a>
+            <a class="fa fa-arrow-left" href="#"></a>
         </div>
         <div class="content">
             <h4>搜索中心</h4>
@@ -91,7 +91,8 @@
     <script type="text/html" id="searchHistoryTpl">
         {{if list.length >0}}
             {{ each list value i}}
-                <li class="mui-table-view-cell">{{ value.key }}
+                <li class="mui-table-view-cell" data-search="{{value.key}}">
+                    {{ value.key }}
                     <span class="mui-badge fa fa-close btn-delete" data-index="{{i}}"></span>
                 </li>
             {{ /each }}
@@ -109,6 +110,7 @@
     <script src="./lib/zepto/zepto.min.js"></script>
     <!-- 3. 有请求使用到模板 引入模板引擎 template-web.js-->
     <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/search.js"></script>
 </body>
 
